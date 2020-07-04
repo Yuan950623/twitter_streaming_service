@@ -1,1 +1,4 @@
-# twitter_streaming_service
+Twitter Streaming API + Kafka
+
+A Real Time Streaming Service
+
