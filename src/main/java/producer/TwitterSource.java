@@ -70,15 +70,14 @@ public class TwitterSource {
 
         for (int i = 0; i < 10009009; i++) {
             try {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             Status curr_feed = feedsQueue.poll();
             if (curr_feed != null) {
-                producer.send(new ProducerRecord<String, String>("first", i + "", "message: " + curr_feed.getText()));
+                producer.send(new ProducerRecord<String, String>("twitter", i + "", "Message" + i + ": " + "| Time: " + curr_feed.getCreatedAt() + "| Text: " + curr_feed.getText()));
             }
-
         }
 
 //        for (int i = 0; i < 10000000; i++) {
